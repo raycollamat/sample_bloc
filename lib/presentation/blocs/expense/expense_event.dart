@@ -1,0 +1,10 @@
+part of 'expense_bloc.dart';
+
+sealed class ExpenseEvent extends Equatable {
+  const ExpenseEvent();
+
+  @override
+  List<Object> get props => [];
+}
+
+class LoadInitialValues extends ExpenseEvent {}
