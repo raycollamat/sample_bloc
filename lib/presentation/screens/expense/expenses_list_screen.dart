@@ -5,8 +5,8 @@ import '../../blocs/expense/expense_bloc.dart';
 import '../../components/custom_card.dart';
 import '../../components/custom_loader.dart';
 
-class ExpenseScreen extends StatelessWidget {
-  const ExpenseScreen({super.key});
+class ExpensesListScreen extends StatelessWidget {
+  const ExpensesListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ExpenseScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               itemCount: state.expenses.length,
               itemBuilder: (context, index) {
-                return CustomCard(expense: state.expenses[index]);
+                return CustomCard(expense: state.expenses[index], index: index);
               },
             );
           }
