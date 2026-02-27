@@ -3,7 +3,9 @@ import 'package:go_router/go_router.dart';
 
 import '../domain/entities/expense_item.dart';
 import '../domain/usecases/expense/get_expense_list_usecase.dart';
+import '../presentation/blocs/device/device_bloc.dart';
 import '../presentation/blocs/expense/expense_bloc.dart';
+import '../presentation/screens/device/devices_list_screen.dart';
 import '../presentation/screens/expense/expense_info_screen.dart';
 import '../presentation/screens/expense/expenses_list_screen.dart';
 import '../presentation/screens/home_screen.dart';
@@ -32,6 +34,13 @@ class AppRouter {
             },
           ),
         ],
+      ),
+      GoRoute(
+        path: '/devices',
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<DeviceBloc>()..add(GetDevicesList()),
+          child: const DevicesListScreen(),
+        ),
       ),
     ],
   );

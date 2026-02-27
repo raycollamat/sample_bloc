@@ -22,7 +22,12 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () => context.push('/expenses'),
-                child: const Text('Start'),
+                child: const Text('Expenses'),
+              ),
+
+              ElevatedButton(
+                onPressed: () => context.push('/devices'),
+                child: const Text('Devices'),
               ),
             ],
           ),
